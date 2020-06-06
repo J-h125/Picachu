@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        *::after {
+            box-sizing: border-box;
+        }
+
+        *::before {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            border: 1px solid green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fee433;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 165px;
+            border: 1px solid red;
+            position: relative;
+        }
+
+        .nose {
+            width: 0 px;
+            height: 0px;
+            border-style: solid;
+            border-width: 12px;
+            border-color: black transparent transparent;
+            border-radius: 11px;
+            position: absolute;
+            left: 50%;
+            top: 28px;
+            margin-left: -12px;
+        }
+
+        .eye {
+            width: 49px;
+            height: 49px;
+            background: #2e2e2e;
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid #000000;
+
+        }
+
+        .eye::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            left: 6px;
+            top: -1px;
+            border: 2px solid #000;
+        }
+
+        .eye.left {
+            right: 50%;
+            margin-right: 90px;
+        }
+
+        .eye.right {
+            left: 50%;
+            margin-left: 90px;
+        }
+
+        .face {
+            width: 68px;
+            height: 68px;
+            background: red;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: 85px;
+        }
+
+        .face.left {
+            right: 50%;
+            margin-right: 116px;
+
+        }
+
+        .face.right {
+            left: 50%;
+            margin-left: 116px;
+
+        }
+
+        .upperlip {
+            height: 25px;
+            width: 64px;
+            border: 3px solid black;
+            background: #fee433;
+            position: absolute;
+            top: 44px;
+        }
+
+        .upperlip.left {
+            right: 50%;
+            border-bottom-left-radius: 40px 25px;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-20deg);
+        }
+
+        .upperlip.right {
+            left: 50%;
+            border-bottom-right-radius: 40px 25px;
+            border-top: none;
+            border-left: none;
+            transform: rotate(20deg);
+        }
+
+        .lowerlip-wrapper {
+            bottom: -40px;
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
+            z-index: -1;
+            height: 150px;
+            overflow: hidden;
+            width: 300px;
+
+
+        }
+
+        .lowerlip {
+            width: 300px;
+            height: 6000px;
+            background: #990513;
+            border-radius: 200px/3000px;
+            border: 2px solid black;
+            position: absolute;
+            bottom: 20px;
+            overflow: hidden;
+        }
+
+        .lowerlip::after {
+            border: 1px solid red;
+            content: '';
+            position: absolute;
+            bottom: 0px;
+            width: 100px;
+            height: 100px;
+            background: #fc4a62;
+            left: 50%;
+            margin-left: -50px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="nose"></div>
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="upperlip left"></div>
+        <div class="upperlip right"></div>
+        <div class="lowerlip-wrapper">
+            <div class="lowerlip"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
